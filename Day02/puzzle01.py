@@ -61,3 +61,4 @@ for strategy in allStrategies:
         totalScore += currentScore
 
 print("The total score is ", totalScore)
+

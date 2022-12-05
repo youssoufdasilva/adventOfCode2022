@@ -1,0 +1,22 @@
+{
+  "name": "day05",
+  "version": "1.0.0",
+  "description": "Advent of code day 5",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "dev": "nodemon",
+    "puzzle1": "npm run build && node build/puzzle01.js",
+    "puzzle2": "npm run build && node build/puzzle02.js"
+  },
+  "author": "Youssouf",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1"
+  }
+}
