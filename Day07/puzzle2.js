@@ -44,9 +44,6 @@ function processTerminalOutput(terminalOutput) {
                 resultTree[myFullPath].contents[myOutput[1]] = 0;
             } else resultTree[myFullPath].contents[myOutput[1]] = 0;
         } else {
-            //test
-            // console.log("currentDirPath :: ", currentDirPath);
-            // console.log("resultTree :: ", resultTree);
             // this is a listed file
             const myFileSize = parseInt(myOutput[0]);
             const myFileName = myOutput[1];
@@ -91,23 +88,13 @@ console.log("currentUsedSpace :: ", currentUsedSpace);
 console.log("currentUnusedSpace :: ", currentUnusedSpace);
 console.log("currentSpaceNeeded :: ", currentSpaceNeeded);
 
-let smallestQualifyingDirectory = ["", currentUsedSpace];
-
 let smallDirSize = currentUsedSpace;
-
 
 for (const directory of Object.keys(terminalTree)) {
     const dirSize = terminalTree[directory].totalSize; 
-    // if (dirSize >= currentSpaceNeeded) { //&& dirSize <= smallDirSize) {
     if (dirSize >= currentSpaceNeeded && dirSize <= smallDirSize) {
-        // console.log('Deleting Directory "', directory, '" would free up "', dirSize,'".' );
         smallDirSize = dirSize;
-        // if (dirSize < smallestQualifyingDirectory[1] ) {
-        //     smallestQualifyingDirectory[0] = directory;
-        //     smallestQualifyingDirectory[1] = dirSize;
-        // }
     }
 }
 
 console.log("smallDirSize = ", smallDirSize);
-// console.log("smallestQualifyingDirectory = ", smallestQualifyingDirectory);
