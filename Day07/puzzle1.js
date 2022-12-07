@@ -15,7 +15,6 @@ function loadInput() {
 
 function processTerminalOutput(terminalOutput) {
     let currentDirPath = [];
-    let currentCmd = "";
     let resultTree = {}
 
     for (const myOutput of terminalOutput) {
@@ -23,8 +22,6 @@ function processTerminalOutput(terminalOutput) {
 
         if (myOutput[0] === '$') {
             // this is a command
-            currentCmd = myOutput[1];
-
             if (myOutput[1] === "cd") {
                 // the current command is to change directory
                 if (myOutput[2] === "..") currentDirPath.pop();
