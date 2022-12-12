@@ -45,20 +45,21 @@ def load_data(file_name):
     return monkey_data
 
 def find_lcm(all_monkey_data):
+    """Function to compute the lowest common multiplier"""
     my_lcm = 1
     for monkey in all_monkey_data.items():
         my_lcm *= monkey[1]["Test"]
     return my_lcm
 
-def inspect_item(item, operation, lcm):
+def inspect_item(item, operation, the_lcm):
     """Function to compute the new worry value of an item after inspection"""
     worry_factor = item
     if operation[-1] != "old":
         worry_factor = int(operation[-1])
 
     if operation[-2] == "+":
-        return (item + worry_factor) % lcm
-    return (item * worry_factor) % lcm
+        return (item + worry_factor) % the_lcm
+    return (item * worry_factor) % the_lcm
 
 def test_item(item, test):
     """Function to test an item"""
